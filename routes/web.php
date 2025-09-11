@@ -1,8 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\GitController;
 
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/',[GitController::class, "index"])->name("index");
