@@ -2,7 +2,7 @@
 @section('content')
 
 <body>
-    <h1>Criar novo cadastro</h1>
+    <h1>Editar cadastro</h1>
     <form class="row g-3" action="{{ route('update', $cont->id)}}" method="POST">
         @csrf
         @method("PUT")
