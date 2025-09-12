@@ -1,12 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Novo -laravel</title>
-</head>
+@extends('layouts.app')
+@section('content')
+
 <body>
     <h1>Criar novo cadastro</h1>
+    <form class="row g-3" action="{{ route('store')}}" method="POST">
+        @csrf
+        <div class="col-auto">
+            <label for="staticEmail2" class="visually-hidden">Email</label>
+            <input type="text" readonly class="form-control-plaintext" id="staticEmail2" value="email@example.com">
+        </div>
+        <div class="col-auto">
+            <label for="email" class="visually-hidden">Password</label>
+            <input type="text" class="form-control" id="email" name="email" placeholder="email">
+        </div>
+        <div class="col-auto">
+            <button type="submit" class="btn btn-primary mb-3">Confirm identity</button>
+        </div>
+    </form>
 </body>
+
 </html>
+
+@endsection
