@@ -46,12 +46,12 @@ class GitController extends Controller
             "email"=>$request->input("email")
         ]);
         
-        return view('show', ["cont"=>$cont]);
+        return view('show', ["cont"=>$cont])->with("success", "Cadastro atualizado com sucesso!");
     }
 
-    public function show()
+    public function show($id)
     {
-        
-        return view('show');
+        $cont = Git::findOrFail($id);
+        return view('show',['cont'=>$cont]);
     }
 }
