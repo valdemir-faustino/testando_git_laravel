@@ -29,4 +29,29 @@ class GitController extends Controller
 
         return redirect()->route("index",["conts"=>$conts]);
     }
+
+    public function edit($id)
+    {
+        $cont= Git::find($id);
+        return view("edit",["cont"=>$cont]);
+    }
+
+    public function update(Request $request,$id)
+    {
+        $request->validate([
+            "email"=>"required|email"
+        ]);
+        $cont= Git::findOrFail($id);
+        $cont->update([
+            "email"=>$request->input("email")
+        ]);
+        
+        return view('show', ["cont"=>$cont]);
+    }
+
+    public function show()
+    {
+        
+        return view('show');
+    }
 }

@@ -16,8 +16,8 @@
                     <td>{{$cont->id}}</td>
                     <td>{{$cont->email}}</td>
                     <td>
-                        <a href="{{ route('edit')}}" class="btn btn-success btn-sm">Editar</a>
-                        <a href="{{ route('show')}}" class="btn btn-info btn-sm">Detalhes</a>
+                        <a href="{{ route('edit',$cont->id)}}" class="btn btn-success btn-sm">Editar</a>
+                        <a href="{{ route('show',$cont->id)}}" class="btn btn-info btn-sm">Detalhes</a>
                     </td>
                 </tr>
             @endforeach
