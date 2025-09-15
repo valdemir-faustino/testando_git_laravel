@@ -21,7 +21,7 @@ class GitController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            "email" => "required|email"
+            "email" => "required|email|unique:contatos,email"
         ]);
        $conts = Git::create([
             "email" => $request->input("email"),
