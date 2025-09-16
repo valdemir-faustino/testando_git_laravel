@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
     <h1>Testando git_php_laravel</h1>
-
+       <x-alert />
     <table class="table">
         <thead>
             <tr>
@@ -18,6 +18,11 @@
                     <td>
                         <a href="{{ route('edit',$cont->id)}}" class="btn btn-success btn-sm">Editar</a>
                         <a href="{{ route('show',$cont->id)}}" class="btn btn-info btn-sm">Detalhes</a>
+                        <form action="{{ route('destroy', $cont->id)}}" method="POST" class="d-inline">
+                            @csrf
+                            @method("delete")
+                            <button type="submit" class="btn btn-danger btn-sm">Apagar</button>
+                        </form>
                     </td>
                 </tr>
             @endforeach

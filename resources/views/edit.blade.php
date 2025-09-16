@@ -3,6 +3,15 @@
 
 <body>
     <h1>Editar cadastro</h1>
+    @if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $erro)
+                <li>{{ $erro }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
     <form class="row g-3" action="{{ route('update', $cont->id)}}" method="POST">
         @csrf
         @method("PUT")
